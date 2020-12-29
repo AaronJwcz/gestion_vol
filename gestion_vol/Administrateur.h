@@ -1,7 +1,7 @@
 #ifndef ADMINISTRATEUR_H_INCLUDED
 #define ADMINISTRATEUR_H_INCLUDED
 
-#include <string.h>
+#include <string>
 #include "Vol.h"
 #include "Passager.h"
 #include "Reservation.h"
@@ -14,6 +14,7 @@ class Administrateur
         std::string mdp;
 
     public:
+        Administrateur(std::string, std::string);
         void connecter();
         Vol ajouterVol();
         Passager ajouterPassager();

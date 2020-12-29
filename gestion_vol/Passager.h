@@ -1,7 +1,7 @@
 #ifndef PASSAGER_H_INCLUDED
 #define PASSAGER_H_INCLUDED
 
-#include <string.h>
+#include <string>
 #include "Reservation.h"
 typedef enum {M, Mlle, Mme} titre;
 
@@ -15,6 +15,7 @@ class Passager
         int numPasseport;
 
     public:
+        Passager(std::string, std::string, int, titre, int);
         Reservation reserverVol();
         void confirmerReservation();
         void annulerReservation();

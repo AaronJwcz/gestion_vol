@@ -32,11 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Administrateur.cpp" />
 		<Unit filename="Administrateur.h" />
+		<Unit filename="Date.cpp" />
 		<Unit filename="Date.h" />
+		<Unit filename="Destination.cpp" />
 		<Unit filename="Destination.h" />
+		<Unit filename="Passager.cpp" />
 		<Unit filename="Passager.h" />
+		<Unit filename="Reservation.cpp" />
 		<Unit filename="Reservation.h" />
+		<Unit filename="Vol.cpp" />
 		<Unit filename="Vol.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

@@ -8,6 +8,9 @@ class Reservation
         int numPasseport;
         int numVol;
         bool confirmation;
+
+    public:
+        Reservation(int, int, int, bool);
 };
 
 #endif // RESERVATION_H_INCLUDED
