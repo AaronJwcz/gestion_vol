@@ -10,6 +10,7 @@ class Date
         std::string heure;
 
     public:
+        Date();
         Date(std::string, std::string);
 };
 

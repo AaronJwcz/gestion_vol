@@ -15,6 +15,7 @@ class Vol
         std::string prix;
 
     public:
+        Vol();
         Vol(int, int, Destination*, Date*, std::string);
         ~Vol();
 };
