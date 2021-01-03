@@ -16,12 +16,12 @@ class Administrateur
     public:
         Administrateur(std::string, std::string);
         void connecter();
-        Vol ajouterVol();
-        Passager ajouterPassager();
-        Reservation ajouterReservation();
-        Destination ajouterDestination();
-        void modifierHeureVol();
-        void modifierDateVol();
+        Vol* ajouterVol();
+        Passager* ajouterPassager();
+        Reservation* ajouterReservation(Passager*, Vol*);
+        Destination* ajouterDestination();
+        void modifierHeureVol(Vol*);
+        void modifierDateVol(Vol*);
         void afficherVols();
         bool isVol();
         void afficherPassagersParVol();

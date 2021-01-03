@@ -16,102 +16,127 @@ Administrateur::Administrateur(string i, string m) : id(i), mdp(m)
 void Administrateur::connecter()
 {
     string i, m;
-    cout<<"Identifiant : "<<endl;
-    cin>>i>>endl;
-    if(i != this.id)
+    cout<<"Identifiant : ";
+    cin>>i;
+    if(i != this->id)
     {
-        cout<<"Identifiant non connu."<<endl;
+        cout<<"Identifiant non connu.";
         exit(1);
     }
-    cout<<"Mot de passe : "<<endl;
-    cin>>m>>endl;
-    if(m != this.mdp)
+    cout<<"Mot de passe : ";
+    cin>>m;
+    if(m != this->mdp)
     {
-        cout>>"Mot de passe incorrect."<<endl;
+        cout<<"Mot de passe incorrect.\n";
         exit(1);
     }
 
 
 }
 
-Vol Administrateur::ajouterVol()
+Vol* Administrateur::ajouterVol()
 {
     int nv, nbpm;
-    string p;
-    Destination* de;
+    string p, d, h;
+    Destination *de;
     Date *da;
 
-    cout<<"Insérez le numéro de vol :"<<endl;
-    cin>>nv>>endl;
-    cout<<"Insérez le nombre de places max :"<<endl;
-    cin>>nbpm>>endl;
-    cout<<"Créer une destination"<<endl;
+    cout<<"Insérez le numéro de vol :";
+    cin>>nv;
+    cout<<"Insérez le nombre de places max :";
+    cin>>nbpm;
+    cout<<"Créer une destination\n";
     de = ajouterDestination();
-    cout<<"Créer une date"<<endl;
-    da = new Date();
-    cin>>da.date>>endl;
-    cin>>da.heure>>endl;
-    cout<<"Insérez le prix :"<<endl;
-    cin>>p>>endl;
-    return new Vol(nv, nbpm, *de, *da, p);
+    cout<<"Créer une date\n";
+    cout<<"Entrez la date :";
+    cin>>d;
+    cout<<"Entrez l'heure :";
+    cin>>h;
+    da = new Date(d,h);
+    cout<<"Insérez le prix :";
+    cin>>p;
+    return new Vol(nv, nbpm, de, da, p);
 }
-Passager Administrateur::ajouterPassager()
+Passager* Administrateur::ajouterPassager()
 {
    string n, p, tn;
    int a, np;
    titre t;
-   cout<<"Entrez le nom :"<<endl;
-   cin>>n>>endl;
-   cout<<"Entrez le prénom :"<<endl;
-   cin>>p>>endl;
-   cout<<"Entrez l'age :"<<endl;
-   cin>>a>>endl;
-   cout<<"Choisissez le titre (M., Mme, Mlle) :"<<endl;
-   cin>>tn>>endl;
-   switch(tn)
+   cout<<"Entrez le nom :";
+   cin>>n;
+   cout<<"Entrez le prénom :";
+   cin>>p;
+   cout<<"Entrez l'age :";
+   cin>>a;
+   cout<<"Choisissez le titre (M., Mme, Mlle) :";
+   cin>>tn;
+   if(tn == "Mme")
    {
-        case "Mme":
-            t = Mme;
-            break;
-        case "M.":
-            t = M;
-            break;
-        case "Mlle":
-            t = Mlle;
-            break;
-        default:
-            cout<<"Titre non accepté"<<endl;
-            exit(1);
+       t = Mme;
    }
-   cout<<"Entrez le numero de passeport :"<<endl
-   cin>>np>>endl;
+   else if(tn == "M.")
+   {
+       t = M;
+   }
+   else if (tn == "Mlle")
+   {
+       t = Mlle;
+   }
+   else
+   {
+       cout<<"Titre non accepté\n";
+       exit(1);
+   }
+   cout<<"Entrez le numero de passeport :";
+   cin>>np;
    return new Passager(n,p,a,t,np);
 }
-Reservation Administrateur::ajouterReservation()
+Reservation* Administrateur::ajouterReservation(Passager *p, Vol *v)
 {
-
+    int nR, np, nv;
+    cout<<"Entrez le numero de reservation :";
+    cin>>nR;
+    np = p->numPasseport;
+    nv = v->numVol;
+    return new Reservation(nR, nP, nV, false);
 }
-Destination Administrateur::ajouterDestination()
+Destination* Administrateur::ajouterDestination()
 {
-
+    string vD, vA;
+    cout<<"Entrez la ville de depart :";
+    cin>>vD;
+    cout<<"Entrez la ville d'arrivee :";
+    cin>>vA;
+    if(vD == vA)
+    {
+        cout<<"La ville de depart et la ville d'arrivee sont indentiques.\n";
+        exit(1);
+    }
+    return new Destination(vD, vA);
 }
-void Administrateur::modifierHeureVol()
+void Administrateur::modifierHeureVol(Vol *v)
 {
-
+    string h;
+    cout<<"Entrez la nouvelle heure :";
+    cin>>h;
+    v->date->heure = h;
 }
-void Administrateur::modifierDateVol()
+void Administrateur::modifierDateVol(Vol *v)
 {
-
+    string d;
+    cout<<"Entrez la nouvelle date :";
+    cin>>d;
+    v->date->date = d;
 }
 void Administrateur::afficherVols()
 {
-
+    //à faire avec la bd
 }
 bool Administrateur::isVol()
 {
-
+    //à faire avec la bd
 }
 void Administrateur::afficherPassagersParVol()
 {
-
+    //à faire avec la bd
 }
