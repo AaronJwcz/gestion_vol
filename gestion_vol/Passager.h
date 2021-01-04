@@ -15,6 +15,7 @@ class Passager
         int numPasseport;
 
     public:
+        Passager();
         Passager(std::string, std::string, int, titre, int);
         std::string getNom();
         std::string getPrenom();

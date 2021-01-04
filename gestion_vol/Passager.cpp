@@ -4,6 +4,10 @@
 
 using namespace std;
 
+Passager::Passager()
+{
+
+}
 Passager::Passager(string n, string p, int a, titre t, int nP) : nom(n), prenom(p), age(a), sonTitre(t), numPasseport(nP)
 {
 
