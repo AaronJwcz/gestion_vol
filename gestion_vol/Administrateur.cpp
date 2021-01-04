@@ -98,7 +98,7 @@ Reservation* Administrateur::ajouterReservation(Passager *p, Vol *v)
     cin>>nR;
     np = p->numPasseport;
     nv = v->numVol;
-    return new Reservation(nR, nP, nV, false);
+    return new Reservation(nR, np, nv, false);
 }
 Destination* Administrateur::ajouterDestination()
 {
