@@ -31,8 +31,8 @@ class Passager
         void confirmerReservation();
         void annulerReservation();
         void afficherVols();
-        bool isVol();
-        bool isReservation();
+        bool isVol(int);
+        bool isReservation(int);
 };
 
 #endif // PASSAGER_H_INCLUDED

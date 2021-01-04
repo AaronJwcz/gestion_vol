@@ -27,7 +27,7 @@ class Administrateur
         void modifierHeureVol(Vol*);
         void modifierDateVol(Vol*);
         void afficherVols();
-        bool isVol();
+        bool isVol(int);
         void afficherPassagersParVol();
 };
 

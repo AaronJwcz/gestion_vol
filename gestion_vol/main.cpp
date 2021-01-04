@@ -33,39 +33,45 @@ int main()
     {
         cout<<"------Choix------\n";
         cout<<"1 -- Rechercher Un Vol\n";
-        cout<<"2 -- Rechercher Une Reservation\n";
-        cout<<"3 -- Ajouter Un Vol\n";
-        cout<<"4 -- Modifier La Date d'Un Vol\n";
-        cout<<"5 -- Modifier l'Heure d'Un Vol\n";
-        cout<<"6 -- Afficher La Liste Des Vols\n";
-        cout<<"7 -- Afficher La Liste Des Passagers d'Un Vol\n";
-        cout<<"8 -- Quitter Et Sauvegarder\n";
-        cout<<"9 -- Quitter Sans Sauvegarder\n";
+        cout<<"2 -- Ajouter Un Vol\n";
+        cout<<"3 -- Modifier La Date d'Un Vol\n";
+        cout<<"4 -- Modifier l'Heure d'Un Vol\n";
+        cout<<"5 -- Afficher La Liste Des Vols\n";
+        cout<<"6 -- Afficher La Liste Des Passagers d'Un Vol\n";
+        cout<<"7 -- Quitter Et Sauvegarder\n";
+        cout<<"8 -- Quitter Sans Sauvegarder\n";
         cin>>reponse;
         switch(reponse)
         {
             case '1':
+                int nV;
+                cout<<"Quel vol voulez-vous rechercher ?";
+                cin>>nV;
+                admin->isVol(nV);
                 break;
             case '2':
-                break;
-            case '3':
                 admin->ajouterVol();
                 break;
+            case '3':
+                Vol* v1;
+                //proposer la liste des vols sous forme de numéros
+                admin->modifierDateVol(v1);
+                break;
             case '4':
-                admin->modifierDateVol();
+                Vol* v2;
+                //proposer la liste des vols sous forme de numéros
+                admin->modifierHeureVol(v2);
                 break;
             case '5':
-                admin->modifierHeureVol();
-                break;
-            case '6':
                 admin->afficherVols();
                 break;
-            case '7':
+            case '6':
                 admin->afficherPassagersParVol();
                 break;
-            case '8':
+            case '7':
+                //sauvegarde dans les fichiers correspondants
                 break;
-            case '9':
+            case '8':
                 exit(0);
                 break;
         }
@@ -77,15 +83,23 @@ int main()
         cout<<"2 -- Rechercher Une Reservation\n";
         cout<<"3 -- Afficher La Liste Des Vols\n";
         cout<<"4 -- Reserver Un Vol\n";
-        cout<<"5 -- Confirmer Une Reservation";
-        cout<<"6 -- Annuler Une Reservation";
+        cout<<"5 -- Confirmer Une Reservation\n";
+        cout<<"6 -- Annuler Une Reservation\n";
         cout<<"7 -- Quitter Et Sauvegarder\n";
         cout<<"8 -- Quitter Sans Sauvegarder\n";
         switch(reponse)
         {
             case '1':
+                int nV;
+                cout<<"Quel vol voulez-vous rechercher ?";
+                cin>>nV;
+                p->isVol(nV);
                 break;
             case '2':
+                int nR;
+                cout<<"Quel reservation voulez-vous rechercher ?";
+                cin>>nR;
+                p->isReservation(nR);
                 break;
             case '3':
                 p->afficherVols();
@@ -100,9 +114,11 @@ int main()
                 p->annulerReservation();
                 break;
             case '7':
+                //sauvegarde dans les fichiers correspondants
                 break;
             case '8':
                 exit(0);
                 break;
+        }
     }
 }

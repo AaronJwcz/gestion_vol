@@ -146,13 +146,13 @@ void Administrateur::modifierDateVol(Vol *v)
 }
 void Administrateur::afficherVols()
 {
-    //à faire avec la bd
+    //récupère la table Vol, la mettre dans un tableau et afficher
 }
-bool Administrateur::isVol()
+bool Administrateur::isVol(int nV)
 {
-    //à faire avec la bd
+    //recherche d'un vol via un numéro de Vol
 }
 void Administrateur::afficherPassagersParVol()
 {
-    //à faire avec la bd
+    //récupère la Table Passager, et compare qui a le même numéro de vol
 }

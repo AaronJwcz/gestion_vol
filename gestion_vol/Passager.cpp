@@ -54,7 +54,7 @@ void Passager::setNumPasseport(int np)
 }
 Reservation Passager::reserverVol()
 {
-
+    //Pas compris
 }
 void Passager::confirmerReservation()
 {
@@ -68,11 +68,11 @@ void Passager::afficherVols()
 {
 
 }
-bool Passager::isVol()
+bool Passager::isVol(int nV)
 {
-
+    //recherche d'un vol via le numéro de vol
 }
-bool Passager::isReservation()
+bool Passager::isReservation(int nR)
 {
-
+    //recherche d'une réservation via le numéro de réservation
 }
