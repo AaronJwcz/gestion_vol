@@ -15,7 +15,11 @@ class Administrateur
 
     public:
         Administrateur(std::string, std::string);
-        void connecter();
+        std::string getID();
+        std::string getMDP();
+        void setID(std::string);
+        void setMDP(std::string);
+        bool connecter();
         Vol* ajouterVol();
         Passager* ajouterPassager();
         Reservation* ajouterReservation(Passager*, Vol*);

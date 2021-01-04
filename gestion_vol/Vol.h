@@ -17,6 +17,16 @@ class Vol
     public:
         Vol(int, int, Destination*, Date*, std::string);
         ~Vol();
+        int getNumVol();
+        int getNbPlaceMax();
+        Destination* getDestination();
+        Date* getDate();
+        std::string getPrix();
+        void setNumVol(int);
+        void setNbPlaceMax(int);
+        void setDestination(Destination*);
+        void setDate(Date*);
+        void setPrix(std::string);
 };
 
 #endif // VOL_H_INCLUDED

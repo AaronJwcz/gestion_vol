@@ -16,6 +16,16 @@ class Passager
 
     public:
         Passager(std::string, std::string, int, titre, int);
+        std::string getNom();
+        std::string getPrenom();
+        int getAge();
+        titre getTitre();
+        int getNumPasseport();
+        void setNom(std::string);
+        void setPrenom(std::string);
+        void setAge(int);
+        void setTitre(titre);
+        void setNumPasseport(int);
         Reservation reserverVol();
         void confirmerReservation();
         void annulerReservation();

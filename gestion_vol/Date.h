@@ -11,6 +11,10 @@ class Date
 
     public:
         Date(std::string, std::string);
+        std::string getDate();
+        std::string getHeure();
+        void setDate(std::string);
+        void setHeure(std::string);
 };
 
 #endif // DATE_H_INCLUDED

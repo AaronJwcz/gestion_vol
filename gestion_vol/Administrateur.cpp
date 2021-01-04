@@ -13,7 +13,24 @@ Administrateur::Administrateur(string i, string m) : id(i), mdp(m)
 
 }
 
-void Administrateur::connecter()
+string Administrateur::getID()
+{
+    return this->id;
+}
+string Administrateur::getMDP()
+{
+    return this->mdp;
+}
+void Administrateur::setID(string i)
+{
+    this->id = i;
+}
+void Administrateur::setMDP(string m)
+{
+    this->mdp = m;
+}
+
+bool Administrateur::connecter()
 {
     string i, m;
     cout<<"Identifiant : ";
@@ -21,17 +38,16 @@ void Administrateur::connecter()
     if(i != this->id)
     {
         cout<<"Identifiant non connu.";
-        exit(1);
+        return false;
     }
     cout<<"Mot de passe : ";
     cin>>m;
     if(m != this->mdp)
     {
         cout<<"Mot de passe incorrect.\n";
-        exit(1);
+        return false;
     }
-
-
+    return true;
 }
 
 Vol* Administrateur::ajouterVol()
@@ -96,8 +112,8 @@ Reservation* Administrateur::ajouterReservation(Passager *p, Vol *v)
     int nR, np, nv;
     cout<<"Entrez le numero de reservation :";
     cin>>nR;
-    np = p->numPasseport;
-    nv = v->numVol;
+    np = p->getNumPasseport();
+    nv = v->getNumVol();
     return new Reservation(nR, np, nv, false);
 }
 Destination* Administrateur::ajouterDestination()
@@ -119,14 +135,14 @@ void Administrateur::modifierHeureVol(Vol *v)
     string h;
     cout<<"Entrez la nouvelle heure :";
     cin>>h;
-    v->date->heure = h;
+    v->getDate()->setHeure(h);
 }
 void Administrateur::modifierDateVol(Vol *v)
 {
     string d;
     cout<<"Entrez la nouvelle date :";
     cin>>d;
-    v->date->date = d;
+    v->getDate()->setDate(d);
 }
 void Administrateur::afficherVols()
 {

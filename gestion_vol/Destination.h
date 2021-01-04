@@ -11,6 +11,10 @@ class Destination
 
     public:
         Destination(std::string, std::string);
+        std::string getVilleDepart();
+        std::string getVilleArrivee();
+        void setVilleDepart(std::string);
+        void setVilleArrivee(std::string);
 };
 
 #endif // DESTINATION_H_INCLUDED

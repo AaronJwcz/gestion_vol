@@ -11,6 +11,14 @@ class Reservation
 
     public:
         Reservation(int, int, int, bool);
+        int getNumReservation();
+        int getNumPasseport();
+        int getNumVol();
+        bool getConfirmation();
+        void setNumReservation(int);
+        void setNumPasseport(int);
+        void setNumVol(int);
+        void setConfirmation(bool);
 };
 
 #endif // RESERVATION_H_INCLUDED

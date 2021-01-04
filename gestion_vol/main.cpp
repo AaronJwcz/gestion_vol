@@ -14,22 +14,14 @@ int main()
     char reponse;
     string mdp;
     bool isAdmin;
-    Administrateur admin = new Admin("admin", "admin");
+    Administrateur *admin;
+    admin = new Administrateur("admin", "admin");
     cout<<"Etes-vous admin ? (y/n) : ";
     cin>>reponse;
     if(reponse == 'y')
     {
-        cout<<"Tapez le mot de passe administrateur : ";
-        cin>>mdp;
-        if(mdp == admin.mdp)
-        {
-           isAdmin = true;
-        }
-        else
-        {
-            cout<<"Mot de passe incorrect, session user active.\n";
-            isAdmin = false
-        }
+        isAdmin = admin->connecter();
+        cout<<"Connexion reussie\n";
     }
     else
     {
@@ -37,6 +29,12 @@ int main()
     }
     if(isAdmin)
     {
-
+        cout<<"------Choix------\n";
+        cout<<"1 -- Modifier Date d'Un Vol\n";
+        cout<<"2 -- Modifier Heure d'Un Vol\n";
+        cout<<"3 -- Ajouter Vol\n";
+        cout<<"4 -- Afficher Liste Des Vols\n";
+        cout<<"5 -- Quitter Et Sauvegarder\n";
+        cout<<"6 -- Quitter Sans Sauvegarder\n";
     }
 }
